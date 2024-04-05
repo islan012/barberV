@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Barbe</string>
+
+    <string-array name="formas_pagamento_array">
+        <item>Pix</item>
+        <item>Cartão de Crédito</item>
+        <item>Boleto</item>
+    </string-array>
+</resources>

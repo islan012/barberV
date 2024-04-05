@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".TelaSete">
+
+    <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="304dp"
+            android:layout_height="169dp"
+            android:background="#D3D3D3"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize"
+            android:id="@+id/materialToolbar3" app:layout_constraintTop_toTopOf="@+id/materialToolbar1"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.962"
+            app:layout_constraintHorizontal_bias="0.532" android:layout_marginBottom="28dp"/>
+    <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="300dp"
+            android:layout_height="171dp"
+            android:background="#D3D3D3"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize"
+            android:id="@+id/materialToolbar2" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.628"
+            app:layout_constraintHorizontal_bias="0.504"/>
+
+    <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="410dp"
+            android:layout_height="49dp"
+            android:background="@color/black"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize"
+            android:id="@+id/materialToolbar"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="1.0"/>
+    <Button
+            android:text="Inicio"
+            android:onClick="inicio"
+            android:layout_width="78dp"
+            android:layout_height="45dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/bt6"
+            app:layout_constraintHorizontal_bias="0.003" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.006"
+            android:textColor="#FAFAFA" android:fontFamily="serif" android:backgroundTint="@color/black"
+            android:textSize="10sp"/>
+    <Button
+            android:text="Sobre"
+            android:onClick="sobre"
+            android:layout_width="79dp"
+            android:layout_height="40dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/bt7"
+            app:layout_constraintHorizontal_bias="0.24" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.008"
+            android:textColor="#FAFAFA" android:fontFamily="serif" android:backgroundTint="@color/black"
+            android:textSize="10sp"/>
+    <Button
+            android:text="Contato"
+            android:onClick="contato"
+            android:layout_width="99dp"
+            android:layout_height="40dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/bt8"
+            app:layout_constraintHorizontal_bias="0.501" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.008"
+            android:textColor="#FAFAFA" android:fontFamily="serif" android:backgroundTint="@color/black"
+            android:textSize="10sp"/>
+    <Button
+            android:text="Planos"
+            android:onClick="plano"
+            android:layout_width="82dp"
+            android:layout_height="36dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/bt9"
+            app:layout_constraintHorizontal_bias="0.778" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.012"
+            android:textColor="#FAFAFA" android:fontFamily="serif" android:backgroundTint="@color/black"
+            android:textSize="10sp"/>
+    <ImageView
+            android:layout_width="410dp"
+            android:layout_height="125dp" app:srcCompat="@drawable/logo"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/imageView2" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.082" app:layout_constraintHorizontal_bias="0.0"/>
+    <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="311dp"
+            android:layout_height="176dp"
+            android:background="#D3D3D3"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize"
+            android:id="@+id/materialToolbar1" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="176dp"/>
+
+    <TextView
+            android:text="Básico"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:fontFamily="serif"
+            android:textSize="14sp"
+            android:layout_width="285dp"
+            android:layout_height="133dp" android:id="@+id/basico1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.277" app:layout_constraintHorizontal_bias="0.444"/>
+    <TextView
+            android:text="\nCorte simples Acabamento de barba Sem serviços extras Atendimento por ordem de chegada\nR$ 30,00"
+            android:textAlignment="center"
+            android:fontFamily="serif"
+            android:textSize="14sp"
+            android:layout_width="285dp"
+            android:layout_height="133dp" android:id="@+id/basico"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.277"/>
+    <TextView
+            android:text="Pro"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:fontFamily="serif"
+            android:textSize="14sp"
+            android:layout_width="272dp"
+            android:layout_height="98dp" android:id="@+id/pro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.586"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"/>
+    <TextView
+            android:text="\nCorte personalizado Tratamento de pele Tratamento de cabelo Reserva flexível de horário\nR$ 60,00"
+            android:textAlignment="center"
+            android:fontFamily="serif"
+            android:textSize="14sp"
+            android:layout_width="272dp"
+            android:layout_height="98dp" android:id="@+id/pro1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.586"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"/>
+    <TextView
+            android:text="Premium"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:fontFamily="serif"
+            android:textSize="14sp"
+            android:layout_width="298dp"
+            android:layout_height="103dp" android:id="@+id/premium1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.89" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"/>
+    <TextView
+            android:text="\nMassagem relaxante Design de barba Corte de cabelo com atenção aos detalhes Marcação de horário preferencial\nR$ 100,00"
+            android:textAlignment="center"
+            android:fontFamily="serif"
+            android:textSize="14sp"
+            android:layout_width="298dp"
+            android:layout_height="103dp" android:id="@+id/premium"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.89" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"/>
+    <Button
+            android:text="Contrate Básico"
+            android:onClick="basico"
+            android:fontFamily="serif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/white"
+            app:layout_constraintHorizontal_bias="0.462"
+            app:layout_constraintVertical_bias="0.437"/>
+    <Button
+            android:text="Contrate Pro"
+            android:onClick="pro"
+            android:fontFamily="serif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/button2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.676"
+    />
+    <Button
+            android:text="Contrate Premium"
+            android:onClick="premium"
+            android:fontFamily="serif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/button3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.953"
+            app:layout_constraintHorizontal_bias="0.548"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
