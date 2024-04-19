@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy JAR app to Azure Web App - blackbarber
+name: Build and deploy PHP app to Azure Web App - blackbarber
 
 on:
   push:
@@ -16,19 +16,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Java version
-        uses: actions/setup-java@v1
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-          java-version: '11'
+          php-version: '8.2'
 
-      - name: Build with Maven
-        run: mvn clean install
+      - name: Check if composer.json exists
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: 'composer.json'
+
+      - name: Run composer install if composer.json exists
+        if: steps.check_files.outputs.files_exists == 'true'
+        run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
+
+      - name: Zip artifact for deployment
+        run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
-          name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          name: php-app
+          path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -38,25 +48,28 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
       id-token: write #This is required for requesting the JWT
-  
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
-          name: java-app
+          name: php-app
+
+      - name: Unzip artifact for deployment
+        run: unzip release.zip
       
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_81E630B8B9BC49E5A3E7A91DC3CB1B63 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8D721F757CB448D99AC5F1D354F7D18C }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C51A22CE022F4CECA6FE573DF01AA516 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_ABBA5D82693641F6B0B3AAD3297598D8 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_986BA9E2D5A74E2C9CF4FAB63A554303 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A8F18A574A03464DA01F21B81B51566E }}
 
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
+      - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
+        id: deploy-to-webapp
         with:
           app-name: 'blackbarber'
           slot-name: 'Production'
-          package: '*.jar'
+          package: .
           
